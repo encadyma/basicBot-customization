@@ -1,6 +1,6 @@
 (function () {
     //Link location of your fork so you don't have to modify so many things.
-    var fork = "Yemasthui";
+    var fork = "encadyma";
 		
     //Define our function responsible for extending the bot.
     function extend() {
@@ -42,7 +42,7 @@
                 if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                 if (!bot.commands.executable(this.rank, chat)) return void (0);
                 else {
-                    API.sendChat("/me Bacon!!!");
+                    API.sendChat("/me Bacon!");
                 }
             }
         };
@@ -93,7 +93,7 @@
         afkRankCheck: "ambassador",
         motdEnabled: false,
         motdInterval: 5,
-        motd: "Temporary Message of the Day",
+        motd: "Beep boop.",
         filterChat: true,
         etaRestriction: false,
         welcome: true,
