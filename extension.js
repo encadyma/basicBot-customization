@@ -46,6 +46,19 @@
                 }
             }
         };
+        
+        bot.commands.baconCommand = {
+            command: 'splish',
+            rank: 'user', //Minimum user permission to use the command
+            type: 'exact',
+            functionality: function (chat, cmd) {
+                if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                if (!bot.commands.executable(this.rank, chat)) return void (0);
+                else {
+                    API.sendChat("/me Splash!");
+                }
+            }
+        };
 
         //Load the chat package again to account for any changes
         bot.loadChat();
@@ -57,10 +70,10 @@
     localStorage.setItem("basicBotsettings", JSON.stringify({
         botName: "basicBot",
         language: "english",
-        startupCap: 1, // 1-200
+        startupCap: 10, // 1-200
         startupVolume: 0, // 0-100
-        startupEmoji: false, // true or false
-        cmdDeletion: true,
+        startupEmoji: true, // true or false
+        cmdDeletion: false,
         chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
         maximumAfk: 120,
         afkRemoval: true,
@@ -72,10 +85,10 @@
         maximumLocktime: 10,
         cycleGuard: true,
         maximumCycletime: 10,
-        voteSkip: false,
+        voteSkip: true,
         voteSkipLimit: 10,
-        timeGuard: true,
-        maximumSongLength: 10,
+        timeGuard: false,
+        maximumSongLength: 60,
         autodisable: true,
         commandCooldown: 30,
         usercommandsEnabled: true,
@@ -105,7 +118,7 @@
         website: null,
         intervalMessages: [],
         messageInterval: 5,
-        songstats: true,
+        songstats: false,
         commandLiteral: "!",
         blacklists: {
             NSFW: "https://rawgit.com/" + fork + "/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
