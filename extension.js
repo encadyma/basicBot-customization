@@ -47,7 +47,7 @@
             }
         };
         
-        bot.commands.baconCommand = {
+        bot.commands.splishCommand = {
             command: 'splish',
             rank: 'user', //Minimum user permission to use the command
             type: 'exact',
